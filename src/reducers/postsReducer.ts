@@ -8,6 +8,8 @@ interface Data {
   fulldate: Date;
   image: string;
   authorUID: string;
+  cat: string;
+  tags: string;
 }
 
 interface CounterState {

@@ -1,12 +1,11 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 import copyL from "../assets/posts/copyL.svg";
-import copyD from "../assets/posts/copyD.svg";
 import arrowL from "../assets/posts/arrowL.svg";
-import arrowD from "../assets/posts/arrowD.svg";
 
 import { useAppSelector } from "../reducers/hooks";
 
@@ -15,7 +14,6 @@ const SinglePostWrapper = () => {
 
   const posts = useAppSelector((state) => state.posts.data);
   const isFetching = useAppSelector((state) => state.posts.fetchingStatus);
-  const theme = useAppSelector((state) => state.theme);
 
   const [copySuccess, setCopySuccess] = useState(false);
   const url = window.location.href;
@@ -23,14 +21,13 @@ const SinglePostWrapper = () => {
   const handleCopyToBuffer = async () => {
     await navigator.clipboard.writeText(url);
     setCopySuccess(true);
-  };
 
-  useEffect(() => {
     const timer: number = window.setTimeout(() => {
-      window.setTimeout > 0 ? setCopySuccess(true) : setCopySuccess(false);
+      setCopySuccess(false);
     }, 1500);
+
     return () => clearTimeout(timer);
-  }, [copySuccess]);
+  };
 
   const postData: any = posts.find((item) => String(item.id) === id);
 
@@ -88,17 +85,7 @@ const SinglePostWrapper = () => {
                 to="/Posts"
               >
                 View More Posts{" "}
-                <img
-                  alt=""
-                  className="back-link--icon"
-                  src={
-                    theme.theme === "light"
-                      ? arrowD
-                      : theme.theme === "dark"
-                      ? arrowL
-                      : ""
-                  }
-                />
+                <img alt="" className="back-link--icon" src={arrowL} />
               </Link>
               <div className="singlepost-content--footer">
                 {copySuccess ? (
@@ -113,17 +100,7 @@ const SinglePostWrapper = () => {
                   aria-label="Share Post"
                   onClick={() => handleCopyToBuffer()}
                 >
-                  <img
-                    className="share-btn--icon"
-                    alt=""
-                    src={
-                      theme.theme === "light"
-                        ? copyD
-                        : theme.theme === "dark"
-                        ? copyL
-                        : ""
-                    }
-                  />
+                  <img className="share-btn--icon" alt="" src={copyL} />
                 </a>
               </div>
             </div>

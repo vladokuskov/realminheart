@@ -44,6 +44,8 @@ const App = () => {
             fulldate: new Date(item.data()._createdBy.timestamp.seconds * 1000),
             image: item.data().image[0].downloadURL,
             authorUID: item.data()._createdBy.uid,
+            cat: item.data().car,
+            tags: item.data().tags,
           })
         );
       });
