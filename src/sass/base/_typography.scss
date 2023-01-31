@@ -1,0 +1,144 @@
+@use "../abstracts" as *;
+
+h1,
+p,
+a,
+h2,
+h3 {
+  text-decoration: none;
+  font-family: $primary-font;
+  font-style: normal;
+  font-size: 16px;
+  margin: 0;
+}
+
+.navbar-logo {
+  font-family: $logo-font;
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 28px;
+  color: #c8a117;
+}
+
+.navbar-link {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 100%;
+  &.active {
+    color: rgba(255, 255, 255, 0.897);
+  }
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(255, 255, 255, 0.897);
+      transition: 0.1s linear;
+    }
+  }
+}
+
+.menu--link {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 100%;
+  margin-right: 2rem;
+  &.active {
+    color: rgba(255, 255, 255, 0.897);
+  }
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(255, 255, 255, 0.897);
+      transition: 0.1s linear;
+    }
+  }
+}
+
+.header-title {
+  color: #ffffff;
+  font-size: 5rem;
+}
+
+.header-subtitle {
+  color: rgba(255, 255, 255, 0.36);
+  margin-top: -1.4rem;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.about-title {
+  font-weight: 900;
+  font-size: 55px;
+  line-height: 60px;
+  letter-spacing: -0.005em;
+  color: #000000;
+  font-family: $footer-font;
+}
+
+.about-content {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.015em;
+  color: rgba(0, 0, 0, 0.64);
+  font-family: $second-font;
+}
+
+.about-link {
+  cursor: pointer;
+  border: 3px solid #f04040;
+  padding: 0.3rem;
+  -webkit-box-shadow: 4px 4px 0px 0px rgba(240, 64, 64, 1);
+  -moz-box-shadow: 4px 4px 0px 0px rgba(240, 64, 64, 1);
+  box-shadow: 4px 4px 0px 0px rgba(240, 64, 64, 1);
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.015em;
+  color: #1c1c1c;
+  &:active,
+  &:focus,
+  &:visited {
+    color: #1c1c1c;
+  }
+}
+
+.footer-copy {
+  font-family: $footer-font;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.015em;
+  color: #171717;
+}
+
+.post-content-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+  padding-top: 0.6rem;
+  @include media($from: "md") {
+    font-size: 1.5rem;
+  }
+}
+
+.post-content-date {
+  color: rgba(255, 255, 255, 0.22);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 52.5%;
+  letter-spacing: 0.01em;
+  align-self: flex-start;
+}
+
+.post-content-text {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 0.01rem;
+  color: rgba(255, 255, 255, 0.56);
+}

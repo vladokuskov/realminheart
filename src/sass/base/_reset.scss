@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: #cccccc;
+}
+
+.App {
+  max-width: 990px;
+  margin: 0 auto;
+}

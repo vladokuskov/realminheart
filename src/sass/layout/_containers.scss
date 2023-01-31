@@ -1,0 +1,260 @@
+@use "../abstracts" as *;
+
+.navbar-wrapper {
+  background: #111111;
+  width: 100%;
+  height: 7.9rem;
+  padding: 2rem;
+  @include flexCenter(row, 0px);
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  .navbar-content-wrapper {
+    @include flexCenter(row, 0px);
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    .navbar-links-wrapper {
+      @include flexCenter(row, 2rem);
+      display: none;
+      @include media($from: "sm") {
+        display: flex;
+      }
+    }
+    .navbar-menu-wrapper {
+      @include media($from: "sm") {
+        display: none;
+      }
+      .navbar-menu--content {
+        top: 7.9rem;
+        position: absolute;
+        background-color: #1d1d1d;
+        width: 100%;
+        right: 0;
+        padding-bottom: 2rem;
+        @include flexCenter(column, 1rem);
+        -webkit-box-shadow: 0px 4px 6px 0px #111111;
+        -moz-box-shadow: 0px 4px 6px 0px #111111;
+        box-shadow: 0px 4px 6px 0px #111111;
+        .navbar-menu-btn {
+          width: 100%;
+          height: 3rem;
+          @include flexCenter(column, 0);
+          -webkit-tap-highlight-color: transparent;
+          .navbar-menu-icon {
+            width: 3rem;
+          }
+        }
+        .navbar-menu--links {
+          list-style: none;
+          @include flexCenter(column, 0.5rem);
+          width: 100%;
+          padding: 1rem 2rem;
+
+          .menu--link {
+            text-align: end;
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(253, 253, 253, 0.116);
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #e8ce47;
+}
+
+.home-wrapper {
+  background: #111111;
+  width: 100%;
+  .home-content {
+    width: 100%;
+    .home-header-wrapper {
+      padding: 1rem 2rem 1rem 2rem;
+      width: 100%;
+      @include flexCenter(column, 0);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+    .home-posts-wrapper {
+      padding: 3rem 2rem;
+      width: 100%;
+      @include flexCenter(column, 3rem);
+      @include media($from: "md") {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .post-main-wrapper {
+        width: 100%;
+        .post-main-content {
+          width: 100%;
+          @include flexCenter(column, 0.5rem);
+          align-items: flex-start;
+          .post-image-wrapper {
+            max-width: 450px;
+            width: 100%;
+            .post-image {
+              width: 100%;
+            }
+          }
+          .post-content-text-wrapper {
+            @include flexCenter(column, 0.5rem);
+            align-items: flex-start;
+          }
+        }
+      }
+      .home-posts-other-wrapper {
+        @include flexCenter(column, 1rem);
+        width: 100%;
+        .post-others-wrapper {
+          width: 100%;
+          .post-others-content {
+            width: 100%;
+            @include flexCenter(row, 0.5rem);
+            justify-content: flex-start;
+            .post-image-others-wrapper {
+              @include flexCenter(row, 0px);
+              max-width: 150px;
+              min-width: 150px;
+              width: 100%;
+              .post-image {
+                width: 100%;
+              }
+            }
+            .post-content-text-wrapper {
+              @include flexCenter(column, 1rem);
+              padding-top: 0.3rem;
+              align-self: flex-start;
+              .post-content-title {
+                padding: 0;
+                letter-spacing: 0.01rem;
+                font-weight: 600;
+                font-size: 1rem;
+                line-height: 100%;
+                color: rgba(255, 255, 255, 0.64);
+              }
+            }
+          }
+        }
+      }
+    }
+    .home-about-wrapper {
+      background-color: #fff;
+      padding: 0 2rem;
+      padding-top: 2rem;
+      @include flexCenter(column, 1rem);
+      .about-content {
+        align-self: flex-start;
+        @include media($from: "md") {
+          align-self: center;
+          max-width: 80%;
+        }
+      }
+      .about-link {
+        margin-top: 1rem;
+        align-self: flex-end;
+        @include media($from: "md") {
+          margin-right: 2rem;
+        }
+      }
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.singlepost-wrapper {
+  background-color: #111111;
+  height: calc(100vh + 20rem);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  @include flexCenter(column, 0px);
+  justify-content: start;
+  @include media($from: "sm", $until: 920px, $and: "orientation: landscape") {
+    height: 100%;
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .singlepost-wrapper--main {
+    margin: 0 auto;
+    @include flexCenter(column, 0px);
+    max-width: 36rem;
+    width: 100%;
+    padding: 0 1rem;
+    .singlepost--info-box {
+      margin-top: 0.5rem;
+      @include flexCenter(column, 0);
+      width: 100%;
+      .info-box--image--wrapper {
+        max-height: 14rem;
+        @include flexCenter(column, 0);
+      }
+      .info-box--image {
+        height: 100%;
+      }
+      .info-box--content {
+        width: 100%;
+        @include flexCenter(column, 0.2rem);
+      }
+    }
+    .singlepost-image--container {
+      @include flexCenter(column, 0);
+      max-width: 100%;
+      min-width: 300px;
+      width: 100%;
+      min-height: 10rem;
+      max-height: 15rem;
+      background-color: rgba(0, 0, 0, 0.336);
+      .singlepost-image {
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .singlepost-content {
+      transition: 0.3s ease-in-out;
+      @include flexCenter(column, 0.5rem);
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      justify-content: space-between;
+      background-color: #333333;
+      .singlepost-content--description {
+        margin: 0.5rem;
+        @include media($from: 650px) {
+          max-width: 90%;
+        }
+        @include media(
+          $from: "sm",
+          $until: 920px,
+          $and: "orientation: landscape"
+        ) {
+          width: 70%;
+          align-self: flex-start;
+        }
+      }
+      .singlepost-content--footer {
+        @include flexCenter(row, -0.3rem);
+        justify-content: flex-end;
+        border-top: 1px solid rgba(0, 0, 0, 0.308);
+        width: 100%;
+        .share-btn--icon {
+          cursor: pointer;
+          width: 2.5rem;
+          margin-right: 0.5rem;
+          padding: 0.3rem;
+        }
+      }
+    }
+  }
+}
