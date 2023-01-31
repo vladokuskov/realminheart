@@ -321,6 +321,20 @@ h3 {
   padding-right: 1rem;
 }
 
+.failed-title {
+  color: rgb(189, 189, 189);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.failed-button {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(212, 194, 27);
+}
+
 .gg-arrows-exchange-alt-v {
   box-sizing: border-box;
   position: relative;
@@ -1013,6 +1027,31 @@ h3 {
   justify-content: center;
   gap: 1rem;
   align-items: flex-start;
+}
+
+.failed-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 4rem 0;
+}
+.failed-wrapper .failed-image-wrapper {
+  max-width: 170px;
+  min-width: 170px;
+  width: 100%;
+}
+.failed-wrapper .failed-image-wrapper .failed-image {
+  width: 100%;
+}
+.failed-wrapper .failed-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
 }
 
 /*# sourceMappingURL=style.css.map */

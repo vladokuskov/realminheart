@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../reducers/hooks";
 
+import Failed from "../components/Failed";
+
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
@@ -76,10 +78,17 @@ const Home = () => {
           <h2 className="header-title">RECENT</h2>
           <p className="header-subtitle">Latest news from the server</p>
         </div>
-        <div className="home-posts-wrapper">
-          {postMain}
-          <div className="home-posts-other-wrapper">{post}</div>
-        </div>
+        {isFetching === 0 ? (
+          ""
+        ) : isFetching === 1 ? (
+          <div className="home-posts-wrapper">
+            {postMain}
+            <div className="home-posts-other-wrapper">{post}</div>
+          </div>
+        ) : (
+          <Failed />
+        )}
+
         <div className="home-about-wrapper">
           <h2 className="about-title">ABOUT US</h2>
           <p className="about-content">

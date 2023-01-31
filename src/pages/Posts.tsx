@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
 import Post from "../components/Post";
+import Failed from "../components/Failed";
 
 import { useAppSelector } from "../reducers/hooks";
 
@@ -95,7 +96,9 @@ function Posts() {
               <span>{isSorted ? " OLDEST" : " NEWEST"}</span>
             </button>
           </div>
-          <div className="articles-wrapper">{post}</div>
+          <div className="articles-wrapper">
+            {isFetching === 0 ? "" : isFetching === 1 ? post : <Failed />}
+          </div>
           <ReactPaginate
             className="posts-pagination--wrapper"
             breakLabel="..."

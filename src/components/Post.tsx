@@ -19,7 +19,7 @@ const Post = (props: any) => {
         <div className="post-image-wrapper">
           <img
             alt=""
-            src={props.data.image}
+            data-src={props.data.image}
             className="post-image lazyload"
           ></img>
         </div>

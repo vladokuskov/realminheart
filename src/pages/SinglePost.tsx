@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 
+import Failed from "../components/Failed";
+
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
@@ -34,8 +36,8 @@ const SinglePostWrapper = () => {
   return (
     <div className="singlepost-wrapper">
       {isFetching === 0 ? (
-        <div className="loader-line"></div>
-      ) : (
+        ""
+      ) : isFetching === 1 ? (
         <>
           {" "}
           <div className="singlepost-wrapper--main">
@@ -106,6 +108,8 @@ const SinglePostWrapper = () => {
             </div>
           </div>
         </>
+      ) : (
+        <Failed />
       )}
     </div>
   );
