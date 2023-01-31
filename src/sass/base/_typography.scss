@@ -18,6 +18,7 @@ h3 {
   font-size: 1.7rem;
   line-height: 28px;
   color: #c8a117;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .navbar-link {
@@ -42,14 +43,14 @@ h3 {
   font-size: 1.2rem;
   line-height: 100%;
   margin-right: 2rem;
+  -webkit-tap-highlight-color: transparent;
   &.active {
     color: rgba(255, 255, 255, 0.897);
   }
-  @media (hover: hover) {
-    &:hover {
-      color: rgba(255, 255, 255, 0.897);
-      transition: 0.1s linear;
-    }
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.897);
+    transition: 0.1s linear;
   }
 }
 
@@ -101,6 +102,10 @@ h3 {
   &:visited {
     color: #1c1c1c;
   }
+  &:hover {
+    color: #1c1c1cc4;
+    transition: 0.1s linear;
+  }
 }
 
 .footer-copy {
@@ -145,21 +150,27 @@ h3 {
 
 .info-box--content-author {
   color: rgba(255, 255, 255, 0.56);
+  font-size: 0.9rem;
   .info-box--content-author--name {
     color: #c8a117;
+    font-weight: 600;
   }
 }
 
 .info-box--content-date {
   color: rgba(255, 255, 255, 0.56);
+  font-size: 0.8rem;
 }
 
 .singlepost-content--title {
+  font-weight: 600;
+  padding: 0 1rem;
+  font-size: 1.4rem;
   color: #fff;
 }
 
 .singlepost-content--description {
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.925);
 }
 
 .back-link {

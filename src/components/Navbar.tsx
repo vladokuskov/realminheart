@@ -23,9 +23,24 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
+  const [sticky, setSticky] = useState("");
+
+  useEffect(() => {
+    window.addEventListener("scroll", isSticky);
+    return () => {
+      window.removeEventListener("scroll", isSticky);
+    };
+  }, []);
+
+  const isSticky = () => {
+    const scrollTop = window.scrollY;
+    const stickyClass = scrollTop >= 132 ? "sticky" : "";
+    setSticky(stickyClass);
+  };
+
   return (
-    <nav ref={ref} className="navbar-wrapper">
-      <div className="navbar-content-wrapper">
+    <nav ref={ref} className={`navbar-wrapper ${sticky}`}>
+      <div className={`navbar-content-wrapper ${sticky}`}>
         <NavLink
           to="/"
           title="Go to Home page"
@@ -46,7 +61,7 @@ const Navbar = () => {
             <img src={menuSVG} className="navbar-menu-icon" />
           </a>
           {isMenuOpen ? (
-            <div className="navbar-menu--content">
+            <div className={`navbar-menu--content ${sticky}`}>
               <div className="navbar-menu--links" tabIndex={0}>
                 <NavLink
                   to="/"

@@ -9,7 +9,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  background: #cccccc;
+  background: #313131;
 }
 
 .App {
@@ -35,6 +35,7 @@ h3 {
   font-size: 1.7rem;
   line-height: 28px;
   color: #c8a117;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .navbar-link {
@@ -59,15 +60,14 @@ h3 {
   font-size: 1.2rem;
   line-height: 100%;
   margin-right: 2rem;
+  -webkit-tap-highlight-color: transparent;
 }
 .menu--link.active {
   color: rgba(255, 255, 255, 0.897);
 }
-@media (hover: hover) {
-  .menu--link:hover {
-    color: rgba(255, 255, 255, 0.897);
-    transition: 0.1s linear;
-  }
+.menu--link:hover {
+  color: rgba(255, 255, 255, 0.897);
+  transition: 0.1s linear;
 }
 
 .header-title {
@@ -117,6 +117,10 @@ h3 {
 .about-link:active, .about-link:focus, .about-link:visited {
   color: #1c1c1c;
 }
+.about-link:hover {
+  color: rgba(28, 28, 28, 0.768627451);
+  transition: 0.1s linear;
+}
 
 .footer-copy {
   font-family: "Archivo", sans-serif;
@@ -162,21 +166,27 @@ h3 {
 
 .info-box--content-author {
   color: rgba(255, 255, 255, 0.56);
+  font-size: 0.9rem;
 }
 .info-box--content-author .info-box--content-author--name {
   color: #c8a117;
+  font-weight: 600;
 }
 
 .info-box--content-date {
   color: rgba(255, 255, 255, 0.56);
+  font-size: 0.8rem;
 }
 
 .singlepost-content--title {
+  font-weight: 600;
+  padding: 0 1rem;
+  font-size: 1.4rem;
   color: #fff;
 }
 
 .singlepost-content--description {
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.925);
 }
 
 .back-link {
@@ -292,6 +302,7 @@ h3 {
   transform: scale(var(--ggs, 1));
   width: 14px;
   height: 16px;
+  z-index: 1;
 }
 
 .gg-arrows-exchange-alt-v::after,
@@ -355,6 +366,7 @@ h3 {
 }
 
 .navbar-wrapper {
+  opacity: 1;
   background: #111111;
   width: 100%;
   height: 7.9rem;
@@ -367,6 +379,10 @@ h3 {
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
+.navbar-wrapper.sticky {
+  padding: 0;
+  z-index: 1005;
+}
 .navbar-wrapper .navbar-content-wrapper {
   display: flex;
   flex-direction: row;
@@ -376,6 +392,15 @@ h3 {
   width: 100%;
   height: 100%;
   justify-content: space-between;
+}
+.navbar-wrapper .navbar-content-wrapper.sticky {
+  position: fixed;
+  height: 3rem;
+  background: #111111;
+  top: 0;
+  padding: 0 2rem;
+  z-index: 1005;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 .navbar-wrapper .navbar-content-wrapper .navbar-links-wrapper {
   display: flex;
@@ -411,6 +436,10 @@ h3 {
   -moz-box-shadow: 0px 4px 6px 0px #111111;
   box-shadow: 0px 4px 6px 0px #111111;
 }
+.navbar-wrapper .navbar-content-wrapper .navbar-menu-wrapper .navbar-menu--content.sticky {
+  top: 3rem;
+  z-index: 1005;
+}
 .navbar-wrapper .navbar-content-wrapper .navbar-menu-wrapper .navbar-menu--content .navbar-menu-btn {
   width: 100%;
   height: 3rem;
@@ -440,7 +469,7 @@ h3 {
   min-width: 100%;
   width: 100%;
   padding: 0.8rem;
-  border-bottom: 1px solid rgba(253, 253, 253, 0.116);
+  border-bottom: 1px solid rgba(253, 253, 253, 0.068);
 }
 
 .footer {
@@ -483,6 +512,10 @@ h3 {
 }
 .home-wrapper .home-content .home-posts-wrapper .post-main-wrapper {
   width: 100%;
+  cursor: pointer;
+}
+.home-wrapper .home-content .home-posts-wrapper .post-main-wrapper:hover {
+  opacity: 0.85;
 }
 .home-wrapper .home-content .home-posts-wrapper .post-main-wrapper .post-main-content {
   width: 100%;
@@ -513,11 +546,20 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0px;
   width: 100%;
 }
 .home-wrapper .home-content .home-posts-wrapper .home-posts-other-wrapper .post-others-wrapper {
   width: 100%;
+  border-bottom: 1px solid rgba(253, 253, 253, 0.062);
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+.home-wrapper .home-content .home-posts-wrapper .home-posts-other-wrapper .post-others-wrapper:hover {
+  opacity: 0.85;
+}
+.home-wrapper .home-content .home-posts-wrapper .home-posts-other-wrapper .post-others-wrapper:last-child {
+  border-bottom: none;
 }
 .home-wrapper .home-content .home-posts-wrapper .home-posts-other-wrapper .post-others-wrapper .post-others-content {
   width: 100%;
@@ -559,7 +601,7 @@ h3 {
   color: rgba(255, 255, 255, 0.64);
 }
 .home-wrapper .home-content .home-about-wrapper {
-  background-color: #fff;
+  background-color: rgb(199, 199, 199);
   padding: 0 2rem;
   padding-top: 2rem;
   display: flex;
@@ -590,7 +632,7 @@ h3 {
 
 .singlepost-wrapper {
   background-color: #111111;
-  height: calc(100% + 2rem);
+  height: calc(100vh + 4rem);
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -638,9 +680,11 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 0;
+  z-index: 1003;
 }
 .singlepost-wrapper .singlepost-wrapper--main .singlepost--info-box .info-box--image {
   height: 100%;
+  z-index: 1003;
 }
 .singlepost-wrapper .singlepost-wrapper--main .singlepost--info-box .info-box--content {
   width: 100%;
@@ -720,6 +764,9 @@ h3 {
   width: 100%;
   padding: 0;
   margin: 0;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.61);
+  font-weight: 500;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -730,7 +777,8 @@ h3 {
   cursor: default;
   text-decoration: none;
   padding: 0.1rem 0.3rem;
-  background-color: themed(div-6);
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.952);
   border-radius: 5px;
 }
 .posts-pagination--wrapper .selected:hover {
@@ -740,12 +788,15 @@ h3 {
   display: none;
 }
 .posts-pagination--wrapper li {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.192);
   padding: 0.1rem 0.3rem;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
 }
 .posts-pagination--wrapper li:hover {
-  text-decoration: underline;
+  color: #fff;
+  transition: 0.1s linear;
 }
 .posts-pagination--wrapper .next,
 .posts-pagination--wrapper .previous {
@@ -809,11 +860,17 @@ h3 {
   justify-content: center;
   gap: 0.1rem;
   padding: 0.4rem;
+  font-weight: 700;
+  font-size: 0.7rem;
   color: white;
   background: #3a3a3a;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+}
+.posts-wrapper .posts-content .articles-section .articles-header-wrapper .tools-btn:hover {
+  background: #474747;
+  transition: 0.1s linear;
 }
 .posts-wrapper .posts-content .articles-section .articles-wrapper {
   width: 100%;
@@ -825,9 +882,14 @@ h3 {
 }
 .posts-wrapper .posts-content .articles-section .articles-wrapper .post-link-wrapper {
   width: 100%;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .posts-wrapper .posts-content .articles-section .articles-wrapper .post-link-wrapper:hover {
+    opacity: 0.85;
+  }
 }
 .posts-wrapper .posts-content .articles-section .articles-wrapper .post-link-wrapper .post-wrapper {
-  cursor: pointer;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -835,6 +897,8 @@ h3 {
   justify-content: center;
   gap: 0.3rem;
   align-items: flex-start;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(253, 253, 253, 0.116);
 }
 @media (min-width: 680px) {
   .posts-wrapper .posts-content .articles-section .articles-wrapper .post-link-wrapper .post-wrapper {
@@ -845,15 +909,15 @@ h3 {
     gap: 1rem;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(253, 253, 253, 0.116);
   }
 }
 .posts-wrapper .posts-content .articles-section .articles-wrapper .post-link-wrapper .post-wrapper .post-image-wrapper {
   width: 100%;
   max-width: 330px;
+  z-index: 1003;
 }
 .posts-wrapper .posts-content .articles-section .articles-wrapper .post-link-wrapper .post-wrapper .post-image-wrapper .post-image {
+  z-index: 1003;
   width: 100%;
   display: flex;
   flex-direction: row;

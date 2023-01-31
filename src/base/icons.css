@@ -6,6 +6,7 @@
   transform: scale(var(--ggs, 1));
   width: 14px;
   height: 16px;
+  z-index: 1;
 }
 
 .gg-arrows-exchange-alt-v::after,

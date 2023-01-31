@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
 .navbar-wrapper {
+  opacity: 1;
   background: #111111;
   width: 100%;
   height: 7.9rem;
@@ -8,11 +9,24 @@
   @include flexCenter(row, 0px);
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  &.sticky {
+    padding: 0;
+    z-index: 1005;
+  }
   .navbar-content-wrapper {
     @include flexCenter(row, 0px);
     width: 100%;
     height: 100%;
     justify-content: space-between;
+    &.sticky {
+      position: fixed;
+      height: 3rem;
+      background: #111111;
+      top: 0;
+      padding: 0 2rem;
+      z-index: 1005;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
     .navbar-links-wrapper {
       @include flexCenter(row, 2rem);
       display: none;
@@ -25,6 +39,10 @@
         display: none;
       }
       .navbar-menu--content {
+        &.sticky {
+          top: 3rem;
+          z-index: 1005;
+        }
         top: 7.9rem;
         position: absolute;
         background-color: #1d1d1d;
@@ -56,7 +74,7 @@
             min-width: 100%;
             width: 100%;
             padding: 0.8rem;
-            border-bottom: 1px solid rgba(253, 253, 253, 0.116);
+            border-bottom: 1px solid rgba(253, 253, 253, 0.068);
           }
         }
       }
@@ -91,6 +109,10 @@
       }
       .post-main-wrapper {
         width: 100%;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.85;
+        }
         .post-main-content {
           width: 100%;
           @include flexCenter(column, 0.5rem);
@@ -109,10 +131,19 @@
         }
       }
       .home-posts-other-wrapper {
-        @include flexCenter(column, 1rem);
+        @include flexCenter(column, 0px);
         width: 100%;
         .post-others-wrapper {
           width: 100%;
+          border-bottom: 1px solid rgba(253, 253, 253, 0.062);
+          padding: 0.5rem 0;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.85;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
           .post-others-content {
             width: 100%;
             @include flexCenter(row, 0.5rem);
@@ -144,7 +175,7 @@
       }
     }
     .home-about-wrapper {
-      background-color: #fff;
+      background-color: rgb(199, 199, 199);
       padding: 0 2rem;
       padding-top: 2rem;
       @include flexCenter(column, 1rem);
@@ -169,7 +200,7 @@
 
 .singlepost-wrapper {
   background-color: #111111;
-  height: calc(100% + 2rem);
+  height: calc(100vh + 4rem);
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -196,9 +227,11 @@
       .info-box--image--wrapper {
         max-height: 14rem;
         @include flexCenter(column, 0);
+        z-index: 1003;
       }
       .info-box--image {
         height: 100%;
+        z-index: 1003;
       }
       .info-box--content {
         width: 100%;
@@ -265,12 +298,16 @@
   width: 100%;
   padding: 0;
   margin: 0;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.61);
+  font-weight: 500;
   @include flexCenter(row, 0.4rem);
   .selected {
     cursor: default;
     text-decoration: none;
     padding: 0.1rem 0.3rem;
-    background-color: themed(div-6);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.952);
     border-radius: 5px;
     &:hover {
       text-decoration: none;
@@ -280,11 +317,14 @@
     display: none;
   }
   li {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.192);
     padding: 0.1rem 0.3rem;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     &:hover {
-      text-decoration: underline;
+      color: #fff;
+      transition: 0.1s linear;
     }
   }
   .next,
@@ -328,11 +368,17 @@
         .tools-btn {
           @include flexCenter(row, 0.1rem);
           padding: 0.4rem;
+          font-weight: 700;
+          font-size: 0.7rem;
           color: white;
           background: #3a3a3a;
           border-radius: 8px;
           border: none;
           cursor: pointer;
+          &:hover {
+            background: #474747;
+            transition: 0.1s linear;
+          }
         }
       }
       .articles-wrapper {
@@ -340,22 +386,29 @@
         @include flexCenter(column, 1.5rem);
         .post-link-wrapper {
           width: 100%;
+          cursor: pointer;
+          @media (hover: hover) {
+            &:hover {
+              opacity: 0.85;
+            }
+          }
           .post-wrapper {
-            cursor: pointer;
             width: 100%;
             @include flexCenter(column, 0.3rem);
             align-items: flex-start;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(253, 253, 253, 0.116);
             @include media($from: "md") {
               @include flexCenter(row, 1rem);
               justify-content: flex-start;
               align-items: flex-start;
-              padding-bottom: 1rem;
-              border-bottom: 1px solid rgba(253, 253, 253, 0.116);
             }
             .post-image-wrapper {
               width: 100%;
               max-width: 330px;
+              z-index: 1003;
               .post-image {
+                z-index: 1003;
                 width: 100%;
                 @include flexCenter(row, 0px);
               }
