@@ -17,3 +17,12 @@ html {
   max-width: 990px;
   margin: 0 auto;
 }
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}

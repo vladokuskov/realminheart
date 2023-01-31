@@ -17,6 +17,16 @@ html {
   margin: 0 auto;
 }
 
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
 h1,
 p,
 a,
@@ -295,6 +305,22 @@ h3 {
   border: 1px solid rgba(37, 211, 75, 0.56);
 }
 
+.error-title {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.error-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.623);
+}
+
+.error-link {
+  color: #c8a117;
+  font-weight: 500;
+  padding-right: 1rem;
+}
+
 .gg-arrows-exchange-alt-v {
   box-sizing: border-box;
   position: relative;
@@ -400,6 +426,7 @@ h3 {
   top: 0;
   padding: 0 2rem;
   z-index: 1005;
+  max-width: 990px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 .navbar-wrapper .navbar-content-wrapper .navbar-links-wrapper {
@@ -959,6 +986,33 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 0px;
+}
+
+.error--wrapper {
+  background-color: #111111;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+.error--wrapper .error-image-wrapper {
+  max-width: 300px;
+  min-width: 300px;
+  width: 100%;
+}
+.error--wrapper .error-image-wrapper .error-image {
+  width: 100%;
+}
+.error--wrapper .error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 /*# sourceMappingURL=style.css.map */
