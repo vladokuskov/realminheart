@@ -3,6 +3,7 @@ import ReactPaginate from "react-paginate";
 
 import Post from "../components/Post";
 import Failed from "../components/Failed";
+import SkeletonM from "../components/skeletons/SkeletonM";
 
 import { useAppSelector } from "../reducers/hooks";
 
@@ -97,7 +98,15 @@ function Posts() {
             </button>
           </div>
           <div className="articles-wrapper">
-            {isFetching === 0 ? "" : isFetching === 1 ? post : <Failed />}
+            {isFetching === 0 ? (
+              <div className="posts-skeletons-wrapper">
+                <SkeletonM />
+              </div>
+            ) : isFetching === 1 ? (
+              post
+            ) : (
+              <Failed />
+            )}
           </div>
           <ReactPaginate
             className="posts-pagination--wrapper"

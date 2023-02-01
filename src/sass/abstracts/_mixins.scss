@@ -69,3 +69,9 @@
     @content;
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.2;
+  }
+}

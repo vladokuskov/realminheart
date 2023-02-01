@@ -36,7 +36,7 @@ const SinglePostWrapper = () => {
   return (
     <div className="singlepost-wrapper">
       {isFetching === 0 ? (
-        ""
+        <div className="singlepost-fetching-wrapper" />
       ) : isFetching === 1 ? (
         <>
           {" "}

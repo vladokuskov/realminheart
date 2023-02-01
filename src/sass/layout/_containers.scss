@@ -100,6 +100,16 @@
       @include flexCenter(column, 0);
       border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     }
+    .home-skeletons-wrapper {
+      animation: fadeIn 1s infinite alternate;
+      max-width: 100%;
+      @include flexCenter(column, 3rem);
+      align-items: flex-start;
+      padding: 3rem 2rem;
+      @include media($from: "md") {
+        flex-direction: row;
+      }
+    }
     .home-posts-wrapper {
       padding: 3rem 2rem;
       width: 100%;
@@ -358,6 +368,7 @@
       width: 100%;
       @include flexCenter(column, 2rem);
       align-items: flex-start;
+
       .articles-header-wrapper {
         width: 100%;
         @include flexCenter(row, 0.1rem);
@@ -382,9 +393,18 @@
           }
         }
       }
+
       .articles-wrapper {
         width: 100%;
         @include flexCenter(column, 1.5rem);
+        .posts-skeletons-wrapper {
+          align-self: flex-start;
+          animation: fadeIn 1s infinite alternate;
+          max-width: 100%;
+          width: 100%;
+          @include flexCenter(column, 2rem);
+          align-items: flex-start;
+        }
         .post-link-wrapper {
           width: 100%;
           cursor: pointer;
@@ -477,4 +497,132 @@
   .failed-content-wrapper {
     @include flexCenter(column, 0px);
   }
+}
+
+.skeleton-wrapper--large {
+  max-width: 100%;
+  width: 100%;
+  @include flexCenter(column, 0.8rem);
+  align-items: flex-start;
+  .skeleton-image {
+    height: 12rem;
+    width: 100%;
+    min-width: 200px;
+    max-width: 27rem;
+    background: #ffffff17;
+    @include media($from: "md") {
+      height: 15rem;
+    }
+  }
+  .skeleton-date {
+    width: 30%;
+    background: #ffffff17;
+    padding: 0.6rem;
+  }
+  .skeleton-title {
+    width: 90%;
+    background: #ffffff17;
+    padding: 0.9rem;
+  }
+  .skeletion-content {
+    width: 80%;
+    background: #ffffff17;
+    height: 1rem;
+  }
+}
+
+.skeleton-wrapper-small {
+  max-width: 100%;
+  width: 100%;
+  @include flexCenter(column, 1rem);
+  align-items: flex-start;
+  .skeleton-wrapper--small {
+    max-width: 100%;
+    width: 100%;
+    @include flexCenter(row, 1rem);
+    align-items: flex-start;
+    .skeleton-image {
+      height: 6rem;
+      width: 100%;
+      max-width: 9.3rem;
+      background: #ffffff17;
+    }
+    .skeleton-content-wrapper {
+      @include flexCenter(column, 1rem);
+      width: 100%;
+      align-items: flex-start;
+      .skeleton-date {
+        width: 30%;
+        background: #ffffff17;
+        padding: 0.4rem;
+      }
+      .skeleton-title {
+        width: 90%;
+        background: #ffffff17;
+        padding: 0.6rem;
+      }
+    }
+  }
+}
+
+.skeleton-wrapper-medium {
+  max-width: 100%;
+  width: 100%;
+  @include flexCenter(column, 3rem);
+  align-items: flex-start;
+  .skeleton-wrapper--medium {
+    max-width: 100%;
+    width: 100%;
+    @include flexCenter(column, 1rem);
+    @include media($from: "md") {
+      flex-direction: row;
+    }
+    align-items: flex-start;
+    .skeleton-image {
+      height: 12rem;
+      width: 100%;
+      max-width: 20rem;
+      background: #ffffff17;
+    }
+    .skeleton-content-wrapper {
+      @include flexCenter(column, 0.5rem);
+      width: 100%;
+      align-items: flex-start;
+      .skeleton-date {
+        width: 50%;
+        max-width: 6rem;
+        background: #ffffff17;
+        height: 0.8rem;
+      }
+      .skeleton-title {
+        width: 100%;
+        max-width: 18rem;
+        background: #ffffff17;
+        height: 1.1rem;
+      }
+      .skeleton-cat {
+        width: 100%;
+        max-width: 5rem;
+        background: #ffffff17;
+        height: 1.4rem;
+      }
+      .skeleton-tag {
+        width: 100%;
+        max-width: 10rem;
+        background: #ffffff17;
+        height: 1.2rem;
+      }
+    }
+  }
+}
+
+.singlepost-fetching-wrapper {
+  max-width: 36rem;
+  height: 80vh;
+  width: 90%;
+  @include media($from: "md") {
+    width: 100%;
+  }
+  background: #ffffff17;
+  animation: fadeIn 1s infinite alternate;
 }

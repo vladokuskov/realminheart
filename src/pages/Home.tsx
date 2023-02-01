@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../reducers/hooks";
 
+import SkeletonL from "../components/skeletons/SkeletonL";
+import SkeletonS from "../components/skeletons/SkeletonS";
 import Failed from "../components/Failed";
 
 import "lazysizes";
@@ -79,7 +81,10 @@ const Home = () => {
           <p className="header-subtitle">Latest news from the server</p>
         </div>
         {isFetching === 0 ? (
-          ""
+          <div className="home-skeletons-wrapper">
+            <SkeletonL />
+            <SkeletonS />
+          </div>
         ) : isFetching === 1 ? (
           <div className="home-posts-wrapper">
             {postMain}
