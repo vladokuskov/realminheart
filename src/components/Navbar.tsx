@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 
-import menuSVG from "../assets/icons/menu.svg";
-
 const Navbar = () => {
   const ref = useRef<any>();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +56,23 @@ const Navbar = () => {
               setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
             }}
           >
-            <img src={menuSVG} className="navbar-menu-icon" />
+            <div className="burger-menu-wrapper">
+              <div
+                className={
+                  isMenuOpen ? `burger-menu-bar open` : "burger-menu-bar"
+                }
+              ></div>
+              <div
+                className={
+                  isMenuOpen ? `burger-menu-bar open` : "burger-menu-bar"
+                }
+              ></div>
+              <div
+                className={
+                  isMenuOpen ? `burger-menu-bar open` : "burger-menu-bar"
+                }
+              ></div>
+            </div>
           </a>
           {isMenuOpen ? (
             <div className={`navbar-menu--content ${sticky}`}>

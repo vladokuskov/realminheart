@@ -1,6 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 
+import mrflockerFull from "../assets/posts/mrflocker-full.png";
+import swappnetFull from "../assets/posts/swappnet-full.png";
+
 import Failed from "../components/Failed";
 
 import "lazysizes";
@@ -59,8 +62,8 @@ const SinglePostWrapper = () => {
                     aria-label="Creator Image"
                     data-src={
                       postData.authorUID === "iaBmTalxlBOJ8Fnat8klUtY5CJI3"
-                        ? "https://crafatar.com/renders/body/825e1bbf-66b8-4461-9ca5-448a3b1c6c66"
-                        : "https://crafatar.com/renders/body/07317b3e-7ad6-456a-b59f-7a1f14f8daf2"
+                        ? swappnetFull
+                        : mrflockerFull
                     }
                   />
                 </div>
@@ -81,12 +84,12 @@ const SinglePostWrapper = () => {
                 {postData.content}
               </p>
               <Link
-                title="View More Posts"
-                aria-label="View More Posts"
+                title="Back to Posts"
+                aria-label="Back to Posts"
                 className="back-link"
                 to="/Posts"
               >
-                View More Posts{" "}
+                Back to Posts{" "}
                 <img alt="" className="back-link--icon" src={arrowL} />
               </Link>
               <div className="singlepost-content--footer">
