@@ -24,7 +24,7 @@ enum Status {
 }
 
 const initialState: CounterState = {
-  fetchingStatus: Status.ERROR,
+  fetchingStatus: Status.FETCHING,
   data: [],
 };
 
@@ -35,7 +35,7 @@ export const dataSlice = createSlice({
     updateDataSuccess: (state, action) => {
       return {
         ...state,
-        fetchingStatus: Status.ERROR,
+        fetchingStatus: Status.SUCCESS,
         data: [...state.data, action.payload],
       };
     },
