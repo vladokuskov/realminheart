@@ -1,9 +1,7 @@
 const Footer = () => {
-  const date = new Date();
-  const year = date.getFullYear();
   return (
     <div className="footer">
-      <p className="footer-copy">{`© ${year} ' REALMINHEART`}</p>
+      <p className="footer-copy">{`© ${new Date().getFullYear()} ' REALMINHEART`}</p>
     </div>
   );
 };
