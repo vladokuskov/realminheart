@@ -51,7 +51,8 @@ const Navbar = () => {
         <div className="navbar-menu-wrapper">
           <a
             className="navbar-menu-btn"
-            tabIndex={2}
+            tabIndex={0}
+            title="Open Menu"
             onClick={() => {
               setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
             }}

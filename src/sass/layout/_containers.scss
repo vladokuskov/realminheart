@@ -178,7 +178,7 @@
                 font-weight: 600;
                 font-size: 1rem;
                 line-height: 100%;
-                color: rgba(255, 255, 255, 0.64);
+                color: rgba(255, 255, 255, 0.808);
               }
             }
           }
@@ -633,32 +633,4 @@
   }
   background: #ffffff17;
   animation: fadeIn 1s infinite alternate;
-}
-
-.burger-menu-wrapper {
-  width: 3.2rem;
-  height: 100%;
-  cursor: pointer;
-  @include flexCenter(column, 0.3rem);
-  padding: 1rem 0;
-  .burger-menu-bar {
-    width: 100%;
-    height: 0.2rem;
-    border-radius: 5px;
-    background-color: rgb(219, 219, 219);
-    &.open:nth-child(1) {
-      transform: rotate(45deg) translate(0.5em, 0.5em);
-      transition: ease-out 0.2s;
-      width: 2.5rem;
-    }
-    &.open:nth-child(2) {
-      transform: scale(0);
-      transition: ease-out 0.2s;
-    }
-    &.open:nth-child(3) {
-      transform: rotate(135deg) translate(-0.2em, 0.3em);
-      transition: ease-out 0.2s;
-      width: 2.5rem;
-    }
-  }
 }
