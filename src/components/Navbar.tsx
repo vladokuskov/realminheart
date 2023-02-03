@@ -49,7 +49,7 @@ const Navbar = () => {
           <h1 className="navbar-logo">REALMINHEART</h1>
         </NavLink>
         <div className="navbar-menu-wrapper">
-          <a
+          <div
             className="navbar-menu-btn"
             tabIndex={0}
             title="Open Menu"
@@ -66,7 +66,7 @@ const Navbar = () => {
             ) : (
               <i className="gg-close"></i>
             )}
-          </a>
+          </div>
           {isMenuOpen ? (
             <div className={`navbar-menu--content ${sticky}`}>
               <div className="navbar-menu--links" tabIndex={0}>
