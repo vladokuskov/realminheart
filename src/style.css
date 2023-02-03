@@ -427,19 +427,37 @@ h3 {
   border-radius: 5px;
   background-color: rgb(219, 219, 219);
 }
-.burger-menu-wrapper .burger-menu-bar.open:nth-child(1) {
-  transform: rotate(45deg) translate(0.5em, 0.5em);
-  transition: ease-out 0.2s;
-  width: 2.5rem;
+
+.gg-close {
+  padding: 1rem 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 3.2rem;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  color: rgb(219, 219, 219);
 }
-.burger-menu-wrapper .burger-menu-bar.open:nth-child(2) {
-  transform: scale(0);
-  transition: ease-out 0.2s;
+
+.gg-close::after,
+.gg-close::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 1.3rem;
+  height: 0.2rem;
+  background: currentColor;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  left: 29%;
 }
-.burger-menu-wrapper .burger-menu-bar.open:nth-child(3) {
-  transform: rotate(135deg) translate(-0.2em, 0.3em);
-  transition: ease-out 0.2s;
-  width: 2.5rem;
+
+.gg-close::after {
+  transform: rotate(-45deg);
 }
 
 .navbar-wrapper {

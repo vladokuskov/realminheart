@@ -57,23 +57,15 @@ const Navbar = () => {
               setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
             }}
           >
-            <div className="burger-menu-wrapper">
-              <div
-                className={
-                  isMenuOpen ? `burger-menu-bar open` : "burger-menu-bar"
-                }
-              ></div>
-              <div
-                className={
-                  isMenuOpen ? `burger-menu-bar open` : "burger-menu-bar"
-                }
-              ></div>
-              <div
-                className={
-                  isMenuOpen ? `burger-menu-bar open` : "burger-menu-bar"
-                }
-              ></div>
-            </div>
+            {!isMenuOpen ? (
+              <div className="burger-menu-wrapper">
+                <div className="burger-menu-bar"></div>
+                <div className="burger-menu-bar"></div>
+                <div className="burger-menu-bar"></div>
+              </div>
+            ) : (
+              <i className="gg-close"></i>
+            )}
           </a>
           {isMenuOpen ? (
             <div className={`navbar-menu--content ${sticky}`}>
