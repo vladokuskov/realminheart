@@ -241,10 +241,11 @@ h3 {
   justify-content: center;
   gap: 0;
   justify-content: flex-start;
+  font-weight: 500;
   padding-right: 1rem;
   padding-left: 0.2rem;
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.76);
   font-family: "Roboto", sans-serif;
 }
 
@@ -458,6 +459,41 @@ h3 {
 
 .gg-close::after {
   transform: rotate(-45deg);
+}
+
+.gg-share {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 100px;
+  box-shadow: 10px -6px 0, 10px 6px 0;
+}
+
+.gg-share::after,
+.gg-share::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+  left: 2px;
+}
+
+.gg-share::before {
+  top: 0;
+  transform: rotate(-35deg);
+}
+
+.gg-share::after {
+  bottom: 0;
+  transform: rotate(35deg);
 }
 
 .navbar-wrapper {
@@ -863,11 +899,13 @@ h3 {
   border-top: 1px solid rgba(0, 0, 0, 0.308);
   width: 100%;
 }
-.singlepost-wrapper .singlepost-wrapper--main .singlepost-content .singlepost-content--footer .share-btn--icon {
+.singlepost-wrapper .singlepost-wrapper--main .singlepost-content .singlepost-content--footer .share-btn {
   cursor: pointer;
-  width: 2.5rem;
-  margin-right: 0.5rem;
-  padding: 0.3rem;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.76);
+  background-color: transparent;
+  border: none;
+  margin-right: 0.3rem;
 }
 
 .posts-pagination--wrapper {

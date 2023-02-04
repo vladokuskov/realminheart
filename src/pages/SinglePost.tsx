@@ -9,7 +9,6 @@ import Failed from "../components/Failed";
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
-import copyL from "../assets/posts/copyL.svg";
 import arrowL from "../assets/posts/arrowL.svg";
 
 import { useAppSelector } from "../reducers/hooks";
@@ -48,7 +47,7 @@ const SinglePostWrapper = () => {
               <img
                 data-src={postData.image}
                 className="singlepost-image lazyload"
-                alt=""
+                alt={`${postData.title} image`}
                 title={`${postData.title} image`}
                 aria-label={`${postData.title} image`}
               />
@@ -60,6 +59,7 @@ const SinglePostWrapper = () => {
                     className="info-box--image lazyload"
                     title="Creator Image"
                     aria-label="Creator Image"
+                    alt=""
                     data-src={
                       postData.authorUID === "iaBmTalxlBOJ8Fnat8klUtY5CJI3"
                         ? swappnetFull
@@ -84,6 +84,7 @@ const SinglePostWrapper = () => {
                 {postData.content}
               </p>
               <Link
+                role="button"
                 title="Back to Posts"
                 aria-label="Back to Posts"
                 className="back-link"
@@ -98,15 +99,15 @@ const SinglePostWrapper = () => {
                 ) : (
                   ""
                 )}
-                <a
+                <button
                   tabIndex={0}
                   className="share-btn"
                   title="Share Post"
                   aria-label="Share Post"
                   onClick={() => handleCopyToBuffer()}
                 >
-                  <img className="share-btn--icon" alt="" src={copyL} />
-                </a>
+                  <i className="gg-share"></i>
+                </button>
               </div>
             </div>
           </div>

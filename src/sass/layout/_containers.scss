@@ -292,11 +292,13 @@
         justify-content: flex-end;
         border-top: 1px solid rgba(0, 0, 0, 0.308);
         width: 100%;
-        .share-btn--icon {
+        .share-btn {
           cursor: pointer;
-          width: 2.5rem;
-          margin-right: 0.5rem;
-          padding: 0.3rem;
+          padding: 1rem;
+          color: rgba(255, 255, 255, 0.76);
+          background-color: transparent;
+          border: none;
+          margin-right: 0.3rem;
         }
       }
     }
