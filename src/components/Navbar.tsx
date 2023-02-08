@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 
 const Navbar = () => {
-  const ref = useRef<any>();
+  const ref = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
@@ -10,8 +10,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const checkIfClickedOutside = (e: any) => {
-      if (isMenuOpen && ref.current && !ref.current.contains(e.target)) {
+    const checkIfClickedOutside = (e: MouseEvent): void => {
+      if (
+        isMenuOpen &&
+        ref.current &&
+        !ref.current.contains(e.target as Node)
+      ) {
         setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
       }
     };

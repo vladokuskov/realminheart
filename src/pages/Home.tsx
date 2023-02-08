@@ -14,7 +14,7 @@ const Home = () => {
 
   const postMain = posts
     .slice(0, 1)
-    .sort((a, b): any => +new Date(b.fulldate) - +new Date(a.fulldate))
+    .sort((a, b) => +new Date(b.fulldate) - +new Date(a.fulldate))
     .map((item, i) => {
       return (
         <Link
@@ -45,7 +45,7 @@ const Home = () => {
 
   const post = posts
     .slice(1, 4)
-    .sort((a, b): any => +new Date(b.fulldate) - +new Date(a.fulldate))
+    .sort((a, b) => +new Date(b.fulldate) - +new Date(a.fulldate))
     .map((item, i) => {
       return (
         <Link

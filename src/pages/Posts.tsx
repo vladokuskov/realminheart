@@ -1,5 +1,5 @@
-import { useState, useMemo, useEffect } from "react";
-import ReactPaginate from "react-paginate";
+import { useState, useMemo, useEffect, ChangeEvent } from "react";
+import ReactPaginate, { ReactPaginateProps } from "react-paginate";
 
 import Post from "../components/Post";
 import Failed from "../components/Failed";
@@ -7,7 +7,7 @@ import SkeletonM from "../components/skeletons/SkeletonM";
 
 import { useAppSelector } from "../reducers/hooks";
 
-interface Data {
+export interface Data {
   id: string;
   title: string;
   content: string;

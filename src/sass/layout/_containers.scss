@@ -219,7 +219,7 @@
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   @include flexCenter(column, 0px);
-  justify-content: start;
+  justify-content: flex-start;
   @include media($from: "sm", $until: 920px, $and: "orientation: landscape") {
     height: 100%;
     padding-bottom: 2rem;
