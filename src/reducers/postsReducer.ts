@@ -6,6 +6,7 @@ interface Data {
   content: string;
   date: string;
   fulldate: Date;
+  convertedDate: string;
   image: string;
   authorUID: string;
   cat: string;
@@ -36,7 +37,7 @@ export const dataSlice = createSlice({
       return {
         ...state,
         fetchingStatus: Status.SUCCESS,
-        data: [...state.data, action.payload],
+        data: action.payload,
       };
     },
     updateDataError: (state) => {

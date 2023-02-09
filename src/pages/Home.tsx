@@ -33,7 +33,7 @@ const Home = () => {
                 alt=""
               />
             </div>
-            <p className="post-content-date">{item.date}</p>
+            <p className="post-content-date">{item.convertedDate}</p>
             <div className="post-content-text-wrapper">
               <p className="post-content-title">{item.title}</p>
               <p className="post-content-text">{item.content}</p>
@@ -65,7 +65,7 @@ const Home = () => {
               />
             </div>
             <div className="post-content-text-wrapper">
-              <p className="post-content-date">{item.date}</p>
+              <p className="post-content-date">{item.convertedDate}</p>
               <p className="post-content-title">{item.title}</p>
             </div>
           </div>

@@ -36,7 +36,7 @@ const Post = (props: any) => {
                 alt=""
               />
             </div>
-            <p className="date-title">{props.data.date}</p>
+            <p className="date-title">{props.data.convertedDate}</p>
           </div>
           <p className="post-title">{props.data.title}</p>
           <p className={`post-cat ${props.data.cat}`}>{props.data.cat}</p>
