@@ -496,6 +496,16 @@ h3 {
   transform: rotate(35deg);
 }
 
+@keyframes smoothScroll {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 .navbar-wrapper {
   opacity: 1;
   background: #111111;
@@ -525,6 +535,10 @@ h3 {
   justify-content: space-between;
 }
 .navbar-wrapper .navbar-content-wrapper.sticky {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  margin-top: -1px;
+  animation: smoothScroll 250ms;
   position: fixed;
   height: 3rem;
   background: #111111;
@@ -792,7 +806,7 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 0px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 @media (min-width: 576px) and (max-width: 919px) and (orientation: landscape) {
   .singlepost-wrapper {
@@ -1352,5 +1366,3 @@ h3 {
     width: 100%;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
