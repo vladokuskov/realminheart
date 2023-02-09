@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useAppDispatch } from "./reducers/hooks";
 import { updateDataSuccess, updateDataError } from "./reducers/postsReducer";
 
-import { getPosts } from "./firebase";
+import { getPosts } from "./utils/firebase";
 
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";

@@ -1,6 +1,4 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
-
-import { documentId } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
