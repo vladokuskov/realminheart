@@ -7,8 +7,7 @@
     "dev": "vite --port 8888 --host",
     "build": "tsc && vite build",
     "lint": "eslint . --ext .ts,.tsx",
-    "preview": "vite preview",
-    "sass": "sass --no-source-map --watch src/sass:src/"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
