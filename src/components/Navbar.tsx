@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
+import { NavLink } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
 
 const Navbar = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const checkIfClickedOutside = (e: MouseEvent): void => {
+    const checkIfClickedOutside = (e: MouseEvent) => {
       if (
         isMenuOpen &&
         ref.current &&
@@ -19,24 +19,23 @@ const Navbar = () => {
         setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
       }
     };
-    document.addEventListener("mousedown", checkIfClickedOutside);
+    document.addEventListener('mousedown', checkIfClickedOutside);
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside);
+      document.removeEventListener('mousedown', checkIfClickedOutside);
     };
   }, [isMenuOpen]);
-
-  const [sticky, setSticky] = useState("");
+  const [sticky, setSticky] = useState('');
 
   useEffect(() => {
-    window.addEventListener("scroll", isSticky);
+    window.addEventListener('scroll', isSticky);
     return () => {
-      window.removeEventListener("scroll", isSticky);
+      window.removeEventListener('scroll', isSticky);
     };
   }, []);
 
   const isSticky = () => {
     const scrollTop = window.scrollY;
-    const stickyClass = scrollTop >= 132 ? "sticky" : "";
+    const stickyClass = scrollTop >= 132 ? 'sticky' : '';
     setSticky(stickyClass);
   };
 
@@ -96,7 +95,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            ""
+            ''
           )}
         </div>
         <div className="navbar-links-wrapper">
@@ -105,7 +104,7 @@ const Navbar = () => {
             title="Go to Home"
             aria-label="Go to Home"
             className={({ isActive }) =>
-              isActive ? "navbar-link active" : "navbar-link "
+              isActive ? 'navbar-link active' : 'navbar-link '
             }
           >
             Home
@@ -115,7 +114,7 @@ const Navbar = () => {
             title="Go to Posts"
             aria-label="Go to Posts"
             className={({ isActive }) =>
-              isActive ? "navbar-link active" : "navbar-link "
+              isActive ? 'navbar-link active' : 'navbar-link '
             }
           >
             Posts

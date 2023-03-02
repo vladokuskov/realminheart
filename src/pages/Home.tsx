@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import { useAppSelector } from "../reducers/hooks";
+import { Link } from 'react-router-dom';
+import { useAppSelector } from '../reducers/hooks';
 
-import SkeletonL from "../components/skeletons/SkeletonL";
-import SkeletonS from "../components/skeletons/SkeletonS";
-import Failed from "../components/Failed";
+import SkeletonL from '../components/skeletons/SkeletonL';
+import SkeletonS from '../components/skeletons/SkeletonS';
+import Failed from '../components/Failed';
 
-import "lazysizes";
-import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const Home = () => {
   const posts = useAppSelector((state) => state.posts.data);
