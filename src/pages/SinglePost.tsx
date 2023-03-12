@@ -1,18 +1,14 @@
-import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 
-import mrflockerFull from "../assets/posts/mrflocker-full.png";
-import swappnetFull from "../assets/posts/swappnet-full.png";
+import Failed from '../components/Failed';
 
-import Failed from "../components/Failed";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-import "lazysizes";
-import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import arrowL from '../assets/posts/arrowL.svg';
 
-import arrowL from "../assets/posts/arrowL.svg";
-
-import { useAppSelector } from "../reducers/hooks";
-import { Data } from "./Posts";
+import { useAppSelector } from '../reducers/hooks';
 
 const SinglePostWrapper = () => {
   const { id } = useParams();
@@ -41,7 +37,6 @@ const SinglePostWrapper = () => {
         <div className="singlepost-fetching-wrapper" />
       ) : isFetching === 1 ? (
         <>
-          {" "}
           <div className="singlepost-wrapper--main">
             <div className="singlepost-image--container">
               <img
@@ -54,26 +49,13 @@ const SinglePostWrapper = () => {
             </div>
             <div className="singlepost-content">
               <div className="singlepost--info-box">
-                <div className="info-box--image--wrapper">
-                  <img
-                    className="info-box--image lazyload"
-                    title="Creator Image"
-                    aria-label="Creator Image"
-                    alt=""
-                    data-src={
-                      postData.authorUID === "iaBmTalxlBOJ8Fnat8klUtY5CJI3"
-                        ? swappnetFull
-                        : mrflockerFull
-                    }
-                  />
-                </div>
                 <div className="info-box--content">
                   <p className="info-box--content-author">
                     Created By
                     <span className="info-box--content-author--name">
-                      {postData.authorUID === "iaBmTalxlBOJ8Fnat8klUtY5CJI3"
-                        ? " Swappnet"
-                        : " MrFLocker"}
+                      {postData.authorUID === 'iaBmTalxlBOJ8Fnat8klUtY5CJI3'
+                        ? ' Swappnet'
+                        : ' MrFLocker'}
                     </span>
                   </p>
                   <p className="info-box--content-date">{postData.date}</p>
@@ -90,14 +72,14 @@ const SinglePostWrapper = () => {
                 className="back-link"
                 to="/Posts"
               >
-                Back to Posts{" "}
+                Back to Posts{' '}
                 <img alt="" className="back-link--icon" src={arrowL} />
               </Link>
               <div className="singlepost-content--footer">
                 {copySuccess ? (
                   <div className="copied--wrapper">Copied</div>
                 ) : (
-                  ""
+                  ''
                 )}
                 <button
                   tabIndex={0}

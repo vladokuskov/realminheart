@@ -1,10 +1,10 @@
-import mrflockerHead from "../assets/posts/mrflockerSmall.png";
-import swappnetHead from "../assets/posts/swappnetSmall.png";
+import mrflockerHead from '../assets/posts/mrflockerSmall.png';
+import swappnetHead from '../assets/posts/swappnetSmall.png';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import "lazysizes";
-import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const Post = (props: any) => {
   return (
@@ -29,7 +29,7 @@ const Post = (props: any) => {
               <img
                 className="author-image lazyload"
                 data-src={
-                  props.data.authorUID === "iaBmTalxlBOJ8Fnat8klUtY5CJI3"
+                  props.data.authorUID === 'iaBmTalxlBOJ8Fnat8klUtY5CJI3'
                     ? swappnetHead
                     : mrflockerHead
                 }
